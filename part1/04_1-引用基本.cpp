@@ -5,7 +5,7 @@ using namespace std;
 // 不能返回局部变量的引用
 int& func() {
     int x = 10; // 局部变量
-    return x;   // 返回局部变量的引用，危险！
+    return x;   // 等价于int& tmp = x;  外部代码 替换成 tmp
 }
 
 // 引用类型的函数调用可以作为左值

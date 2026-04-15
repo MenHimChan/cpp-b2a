@@ -1,0 +1,4 @@
+name, id, deptId
+xiaomao 1 1
+others 2 2
+dahu 0 0

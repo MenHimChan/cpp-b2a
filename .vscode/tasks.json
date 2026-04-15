@@ -22,11 +22,110 @@
             "problemMatcher": [
                 "$gcc"
             ],
+            "group": "build",
+            "detail": "Build current file in part1"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Compile Current File in 杂7杂8知识点",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-I${workspaceFolder}/杂7杂8知识点",
+                "${file}",
+                "-o",
+                "${fileDirname}/binfile/${fileBasenameNoExtension}",
+                "-std=c++17",
+                "-Wall",
+                "-Wextra"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/杂7杂8知识点"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "Build current file in 杂7杂8知识点"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Compile Current File in Part2-STL",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-I${workspaceFolder}/part2-stl",
+                "${file}",
+                "-o",
+                "${fileDirname}/binfile/${fileBasenameNoExtension}",
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "-pthread"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/part2-stl"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "Build current file in part2-stl"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Compile Current File in 多线程",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-I${workspaceFolder}/多线程",
+                "${file}",
+                "-o",
+                "${fileDirname}/binfile/${fileBasenameNoExtension}",
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "-pthread"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/多线程"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "Build current file in 多线程"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Compile Current File in Part3-C11",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-I${workspaceFolder}/part3-C11",
+                "${file}",
+                "-o",
+                "${fileDirname}/binfile/${fileBasenameNoExtension}",
+                "-std=c++14",
+                "-Wall",
+                "-Wextra",
+                "-pthread"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/part3-C11"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Build current file in part1"
+            "detail": "Build current file in part3-C11"
         }
     ]
 }

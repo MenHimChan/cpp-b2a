@@ -4,8 +4,8 @@ using namespace std;
 
 class Test {
 public:
-    Test(int i) : val(i) {cout << "Test(int i) " << endl;}
-    ~Test() {cout << "~Test() " << endl;}
+    Test(int i) : val(i) { cout << "Test(int i) " << endl; }
+    ~Test() { cout << "~Test() " << endl; }
     void run() {cout << "Calling run()  !" << endl;}
     int val;
 };

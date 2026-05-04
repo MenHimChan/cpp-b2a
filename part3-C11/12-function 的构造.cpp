@@ -63,7 +63,39 @@ void test() {
     fun_vec[2](100,200);                // 300
 }
 
+void test02() {
+    // lambda表达式的捕获列表
+    int val = 100;
+
+    // 捕获普通int，lambda 可拷贝构造
+    auto lambda_copy = [val]() {
+        std::cout << val << std::endl;
+    };
+
+    // 可以正常装入 std::function
+    std::function<void()> func1 = lambda_copy;
+    func1();                // 100
+
+    // 连 std::function 自己也能拷贝
+    std::function<void()> func2 = func1;
+    func2();                // 100
+}
+
+void test03() {
+    unique_ptr<int> up = std::make_unique<int>(200);            // 你往盒子里放东西，那东西也必须能复制，否则就会导致整个盒子不可复制
+
+    // 捕获 unique_ptr，这个 lambda 拷贝构造被隐式删除
+    auto lambda_moveonly = [p = std::move(up)]() {              // 捕获列表里用移动语义捕获了一个不可复制的对象
+        std::cout << *p << std::endl;
+    };
+
+    lambda_moveonly();                                          // 200
+    // std::function<void()>&& func = move(lambda_moveonly);    // 这行直接编译报错，不允许将不可复制的 lambda 存入 std::function
+    // auto func2 = func;
+}
+
 int main() {
-    test();
+    // test();
+    test03();
     return 0;
 }

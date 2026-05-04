@@ -25,6 +25,22 @@ public:
             for_each(this->vec.begin(), this->vec.end(), [] (int a) { cout << a << ' '; });
         }();
     }
+
+    // 内层想用this，必须外层捕获了this
+    void NestedCapture() {
+        auto outer_lambda = [this]() {
+            for (auto &x : this->vec) {
+
+                auto inner_lambda = [this] () {
+                    // 靠 this 访问类成员，间接拿到值
+                    cout << this->vec[0] << ' ';
+                };
+                inner_lambda();
+            }
+        };
+
+        outer_lambda();
+    }
 };
 
 void test() {
@@ -58,9 +74,14 @@ void test02() {
     tst.printTest();
 }
 
+void test03() {
+    Test tst;
+    tst.NestedCapture();
+}
+
 int main() {
     int var_In_main = 114514;
     // test();
-    test02();
+    test03();
     return 0;
 }

@@ -110,10 +110,11 @@
                 "${file}",
                 "-o",
                 "${fileDirname}/binfile/${fileBasenameNoExtension}",
-                "-std=c++14",
+                "-std=c++17",
                 "-Wall",
                 "-Wextra",
-                "-pthread"
+                "-pthread",
+                "-lcjson"
             ],
             "options": {
                 "cwd": "${workspaceFolder}/part3-C11"
@@ -126,6 +127,30 @@
                 "isDefault": true
             },
             "detail": "Build current file in part3-C11"
+        },
+        {
+            "type": "cppbuild",
+            "label": "Compile Current File in 常用库",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/binfile/${fileBasenameNoExtension}",
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "-lcjson"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/常用库"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "Build current file in 常用库"
         }
     ]
 }

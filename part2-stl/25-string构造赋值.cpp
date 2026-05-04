@@ -7,8 +7,10 @@ void test() {
     // 默认构造
     string str1;        // 空串
 
-    // 字符串常量构造
-    string str2("Hello world");     // 
+    // C风格字符串常量构造
+    string str2("Hello world");              
+    const char* c_str = "Hello world";
+    string str2_1(c_str, 5);                // Hello  从c_str的前5个字符构造
 
     // 拷贝构造
     string str3(str2);
@@ -42,7 +44,14 @@ void test() {
     cout << str9 << endl;               // 1 2 3
 }
 
+void test02 () {
+    string str1 = "123";
+    str1.pop_back();      // 删除末尾字符
+    cout << str1 << endl; // 12
+}
+
 int main() {
-    test();
+    // test();
+    test02();
     return 0;
 }

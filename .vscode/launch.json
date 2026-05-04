@@ -109,6 +109,27 @@
             ],
             "preLaunchTask": "Compile Current File in Part3-C11",
             "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "Debug 常用库 Program",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/binfile/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/常用库",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Compile Current File in 常用库",
+            "miDebuggerPath": "/usr/bin/gdb"
         }
     ]
 }
